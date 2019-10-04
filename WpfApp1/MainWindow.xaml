@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:iLogic_Form1"
         mc:Ignorable="d"
-        Title="iLogic WPF Form" Height="450" Width="800">
+        Title="iLogic WPF Form" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
-        <ComboBox x:Name="cmbFilterType" HorizontalAlignment="Left" Height="34" Margin="148,26,0,0" VerticalAlignment="Top" Width="244"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="36" Margin="650,373,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="414,26,0,0" VerticalAlignment="Top" Width="41" Height="34" Click="Button_Click_1"/>
-        <Button Content="Update Model" HorizontalAlignment="Left" Margin="148,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="cmbFilterType" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="128" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="143,10,10,0" VerticalAlignment="Top" Width="25" Height="22" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+        <Button Content="Update Model" HorizontalAlignment="Left" Margin="10,209,10,10" VerticalAlignment="Top" Width="158" Click="Button_Click_2" Grid.ColumnSpan="2"/>
+        <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="158" Margin="10,37,0,0" VerticalAlignment="Top" Width="158"/>
 
     </Grid>
 </Window>

@@ -8,19 +8,48 @@ using iLogicAuto = Autodesk.iLogic.Automation;
 
 namespace iLogic_Filter_Configurator
 {
+    /// <summary>
+    /// Custom iLogic-Form Sample - Advanced
+    /// </summary>
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Name of current filter component
+        /// </summary>
         public string _FilterType;
+        /// <summary>
+        /// List names of all available filter components
+        /// </summary>
         public List<string> _Filters;
+        /// <summary>
+        /// Used to enable/disable Update Model command
+        /// </summary>
         public bool _UpdateRequired;
+        /// <summary>
+        /// Preview Image - selected component
+        /// </summary>
         public Image _Thumbnail;
+        /// <summary>
+        /// All preview images
+        /// </summary>
         public Dictionary<String, Image> _Thumbnails;
         private ImageList _ThumbnailList = new ImageList();
+        /// <summary>
+        /// iLogic Document - ThisDoc
+        /// </summary>
         public iLogic.ICadDoc _Doc;
+        /// <summary>
+        /// Rule to be called from dialog
+        /// </summary>
         public iLogic.iLogicRule _Rule;
+        /// <summary>
+        /// Share iLogic Automation runtime to a dialog 
+        /// </summary>
         public iLogicAuto.iLogicAutomationNonCOM _Auto;
-        public string _RuleName;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Form1()
         {
             InitializeComponent();

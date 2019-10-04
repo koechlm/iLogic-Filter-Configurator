@@ -82,9 +82,11 @@
             // btnUpdate
             // 
             this.btnUpdate.Enabled = false;
+            this.btnUpdate.Image = global::iLogic_Filter_Configurator.Resource1.Update_16x16;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(71, 277);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(225, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(225, 24);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Update Model";
             this.btnUpdate.UseVisualStyleBackColor = true;

@@ -1,0 +1,17 @@
+﻿AddReference "iLogic_Form1"
+AddReference "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+AddReference "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+AddReference "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+AddReference "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+AddReference "Autodesk.iLogic.Automation"
+Sub main
+	Dim dlg As New iLogic_Form1.MainWindow
+	dlg.InitializeComponent
+	dlg._Doc = ThisDoc
+	dlg._Auto = iLogicVb.Automation
+	dlg._Rule = "DataRefresh"
+	i = dlg.ShowDialog
+	If i = True Then
+		Logger.Info("WPF Form closed returning True")
+	End If
+End Sub
