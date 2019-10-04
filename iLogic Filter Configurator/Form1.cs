@@ -30,11 +30,7 @@ namespace iLogic_Filter_Configurator
         private void Form1_Load(object sender, EventArgs e)
         {
             _Auto.RunRule(_Doc.Document, "Enable_UpdateModel");
-            btnUpdate.Enabled = _UpdateRequired;
-            cmbFilterType.Items.AddRange(_Filters.ToArray());
-            cmbFilterType.SelectedIndex = cmbFilterType.Items.IndexOf(_FilterType);
 
-            //listView1.InitializeLifetimeService();
             fillListView();
             listView1.View = View.List;
             mnuLargeIcons.Checked = false;
@@ -70,48 +66,16 @@ namespace iLogic_Filter_Configurator
             }
         }
 
-        private void cmbFilterTyple_SelectionChanged(object sender, EventArgs e)
-        {
-            _FilterType = cmbFilterType.SelectedItem.ToString();
-            _Auto.RunRule(_Doc.Document, "Enable_UpdateModel");
-            btnUpdate.Enabled = _UpdateRequired;
-            pictureBox1.Image = _Thumbnails[_FilterType];
-        }
-
-
-        private void btnDone_Click(object sender, EventArgs e)
-        {
-            _FilterType = cmbFilterType.SelectedText;
-            DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void btnDataRefresh_Click(object sender, EventArgs e)
-        {
-            _Auto.RunRule(_Doc.Document, "DataRefresh");
-            cmbFilterType.Items.Clear();
-            cmbFilterType.Items.AddRange(_Filters.ToArray());
-            cmbFilterType.Text = _FilterType;
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            _Auto.RunRule(_Doc.Document, "UpdateModel");
-            mnuUpdateModel.Enabled = _UpdateRequired;
-            txtCurrentFilter.Text = _FilterType;
-        }
+
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _Auto.RunRule(_Doc.Document, "DataRefresh");
-            cmbFilterType.Items.Clear();
-            cmbFilterType.Items.AddRange(_Filters.ToArray());
-            cmbFilterType.Text = _FilterType;
             listView1.Items.Clear();
             fillListView();
         }
@@ -120,6 +84,7 @@ namespace iLogic_Filter_Configurator
         {
             _Auto.RunRule(_Doc.Document, "UpdateModel");
             mnuUpdateModel.Enabled = _UpdateRequired;
+            ctxMnuListView1.Enabled = _UpdateRequired;
             txtCurrentFilter.Text = _FilterType;
         }
 
@@ -157,7 +122,15 @@ namespace iLogic_Filter_Configurator
             _FilterType = e.Item.Name;
             _Auto.RunRule(_Doc.Document, "Enable_UpdateModel");
             mnuUpdateModel.Enabled = _UpdateRequired;
+            ctxMnuListView1.Enabled = _UpdateRequired;
         }
 
+        private void updateModelToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            _Auto.RunRule(_Doc.Document, "UpdateModel");
+            mnuUpdateModel.Enabled = _UpdateRequired;
+            ctxMnuListView1.Enabled = _UpdateRequired;
+            txtCurrentFilter.Text = _FilterType;
+        }
     }
 }
